@@ -22,7 +22,7 @@ soundFunda.controller('SoundFundaController', function($scope, $rootScope) {
 
 	$scope.search = function(sound) {
 		SC.initialize({
-			client_id: 'b7b17489b877a6b30177725e0729c131',
+			client_id: 'CLIENT_ID_HERE',
 			redirect_uri: "http://localhost:9000/soundfunda/#/play"
 		});
 
@@ -37,13 +37,13 @@ soundFunda.controller('SoundFundaController', function($scope, $rootScope) {
 
 	$scope.play = function(track) {
 		SC.initialize({
-			client_id: 'b7b17489b877a6b30177725e0729c131',
+			client_id: 'CLIENT_ID_HERE',
 			redirect_uri: "http://localhost:9000/soundfunda/#/play"
 		});
 
 		SC.connect(function() {
 			SC.get("/tracks/" + track, function(track) {
-				SC.oEmbed(track.permalink_url, document.getElementById('player'));
+				SC.oEmbed(track.permalink_url, { auto_play: true}, document.getElementById('player'));
 			});
 		});
 	};
