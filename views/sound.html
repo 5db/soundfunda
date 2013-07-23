@@ -1,0 +1,27 @@
+<form class="form-horizontal">
+  <input class="input-xxlarge" type="text" placeholder="Enter your sound" ng-model="sound.name">
+  <button type="submit" class="btn btn-success" ng-click="search()">Search Sound</button>
+</form>
+<hr>
+<div id="player"></div>
+<p class="lead">{{ tracks.length }} Sounds</p>
+<table class="table table-bordered table-condensed table-hover">
+  <thead>
+    <tr>
+      <th>Play</th>
+      <th>Title</th>
+      <th>Genre</th>
+      <th>Download</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="track in tracks">
+    <tr ng-click="play({{ track.id }})">
+      <td>{{ track.title }}</td>
+      <td>{{ track.title }}</td>
+      <td>{{ track.genre }}</td>
+      <td>{{ track.download_count }}</td>
+      <td>{{ track.created_at }}</td>
+    </tr>
+  </tbody>
+</table>

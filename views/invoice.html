@@ -1,0 +1,46 @@
+<p class="lead">Use below form to submit an invoice</p>
+<form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Invoice Name</label>
+    <div class="controls">
+      <input type="text" id="inputInvoiceName" placeholder="Invoice Name">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputTime">Time</label>
+    <div class="controls">
+      <input type="text" id="inputInvoiceTime" placeholder="Time">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputDescription">Description</label>
+    <div class="controls">
+      <input type="text" id="inputInvoiceDescription" placeholder="Description" class="input-xxlarge">
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-success">Submit Invoice</button>
+    </div>
+  </div>
+</form>
+<hr>
+<p class="lead">Current invoices</p>
+<table class="table table-bordered table-condensed table-hover">
+  <thead>
+    <tr>
+      <th>Invoice Name</th>
+      <th>Description</th>
+      <th>Time</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="company in companies">
+    <tr>
+      <td>{{ company.name }}</td>
+      <td>{{ company.address }}</td>
+      <td>{{ company.address }}</td>
+      <td><a href="#/invoice" class="btn btn-link">Delete Invoice</button></td>
+    </tr>
+  </tbody>
+</table>
